@@ -1,0 +1,131 @@
+/* Base Styles */
+:root {
+  --primary-color: #F27F1B; /* Anime orange */
+  --secondary-color: #FFA94D;
+  --dark-bg: #121212; /* Crunchyroll-like dark background */
+  --darker-bg: #0A0A0A;
+  --text-light: #F5F5F5;
+  --text-muted: #A0A0A0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-image: 
+    radial-gradient(circle at 75% 25%, rgba(242, 127, 27, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 25% 75%, rgba(242, 127, 27, 0.05) 0%, transparent 60%);
+}
+
+/* Typography */
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(242, 127, 27, 0.3);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+p {
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+em {
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+/* Form Elements */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+input {
+  flex-grow: 1;
+  min-width: 200px;
+  padding: 0.8rem 1.2rem;
+  background-color: var(--darker-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(242, 127, 27, 0.3);
+}
+
+button {
+  padding: 0.8rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  form {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  input, button {
+    width: 100%;
+  }
+}
